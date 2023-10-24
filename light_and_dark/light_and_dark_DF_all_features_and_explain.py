@@ -80,6 +80,9 @@ model_sub.fit(train_ds)
 model_sub.compile(metrics=["accuracy"])
 print(model_sub.evaluate(test_ds))
 
+# Store the model
+classifier.save('light_and_dark_predicted_DF.tf')
+
 # Generate model predictions for the test set
 predictions = list((model_sub.predict(test_ds, verbose=0)))
 
