@@ -120,7 +120,8 @@ for i in [5, 3, 0, 4, 1, 2]:
 
     # fitting the Neural Network on the training data
     classifier.fit(X_train, y_train, batch_size = 20, epochs = 7)
-    
+
+
     ##################################################################################
     ## predictions
     # get a list with a prediction for each protein entry
@@ -145,6 +146,9 @@ for i in [5, 3, 0, 4, 1, 2]:
     
         ## write to output file
         all_protein_info.to_csv('light_and_dark_predicted_ANN.tsv', sep="\t", index=False)
+
+        ## Store the model
+        classifier.save('light_and_dark_predicted_ANN.tf')
 
 # display plot
 #plt.show()
